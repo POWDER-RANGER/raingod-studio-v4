@@ -1,0 +1,33 @@
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = [
+    "E",      # pycodestyle errors
+    "W",      # pycodestyle warnings
+    "F",      # pyflakes
+    "I",      # isort
+    "N",      # pep8-naming
+    "UP",     # pyupgrade
+    "B",      # flake8-bugbear
+    "C901",   # mccabe complexity
+    "A",      # flake8-builtins
+    "C",      # flake8-comprehensions
+    "PIE",    # flake8-pie
+    "RET",    # flake8-return
+    "SIM",    # flake8-simplify
+    "PERF",   # perflint
+]
+
+ignore = [
+    "E501",  # line too long (Black handles this)
+    "W291",  # trailing whitespace
+]
+
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["F401", "F403"]
+"tests/*" = ["A002", "A003"]  # Allow arg names in tests
+
+[tool.ruff.lint.mccabe]
+max-complexity = 10
